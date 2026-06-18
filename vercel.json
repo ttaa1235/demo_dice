@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd apps/crm && npm run build",
+  "installCommand": "cd apps/crm && npm install",
+  "framework": "nextjs"
+}
