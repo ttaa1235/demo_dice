@@ -1,0 +1,194 @@
+먼저 저장소 구조와 기획서를 확인하겠습니다.
+
+[3 tools called]
+
+기획서 내용을 읽고 구현 범위를 확정하겠습니다.
+
+[2 tools called]
+
+기획서 기반으로 백엔드/봇/CRM 골격과 DB 마이그레이션을 생성하겠습니다.
+
+[1 tool called]
+
+필수 디렉터리를 추가로 준비하고 파일들을 패치합니다.
+
+[9 tools called]
+
+이제 Supabase 스키마와 RPC를 한 번에 추가합니다.
+
+[1 tool called]
+
+CRM Next.js 앱과 관리자 API 라우트를 추가하겠습니다.
+
+[12 tools called]
+
+대시보드와 관리 화면 공통 UI를 이어서 구성합니다.
+
+[4 tools called]
+
+불필요한 placeholder 폴더를 정리하고 실제 API 파일을 배치합니다.
+
+[5 tools called]
+
+관리 화면 목록과 API 엔드포인트를 생성하겠습니다.
+
+[22 tools called]
+
+입금 생성과 설정/마켓 업데이트 RPC를 보강하겠습니다.
+
+[1 tool called]
+
+SQL 마이그레이션에 관리자용 설정 변경 RPC를 추가합니다.
+
+[1 tool called]
+
+CRM에서 마켓/환경설정 변경 API도 연결합니다.
+
+[3 tools called]
+
+간단한 테스트와 검증 SQL을 추가한 뒤 빌드 확인을 진행하겠습니다.
+
+[4 tools called]
+
+유저 상태 변경과 복구 정책 API까지 추가합니다.
+
+[4 tools called]
+
+입출금 검토/상태 변경용 관리자 API를 마저 연결합니다.
+
+[9 tools called]
+
+SQL 관리자 RPC를 추가해 API와 일치시키겠습니다.
+
+[1 tool called]
+
+중요한 누락 흐름을 보강한 뒤 문법/빌드 검증을 실행하겠습니다.
+
+[1 tool called]
+
+패치 충돌 구간만 확인하고 작은 단위로 다시 적용합니다.
+
+[4 tools called]
+
+봇 입금 생성도 RPC 기반으로 변경해 일관성을 맞춥니다.
+
+[4 tools called]
+
+수동 입금 반영 API와 검증 문서를 추가합니다.
+
+[4 tools called]
+
+SQL jsonb 캐스팅 오류 가능성을 정리하겠습니다.
+
+[3 tools called]
+
+입금 생성/수동 처리 API와 운영 체크 SQL을 추가합니다.
+
+[2 tools called]
+
+입금/출금 확장 API와 SQL 운영 검증 파일을 추가합니다.
+
+[5 tools called]
+
+수동 입금 실패 RPC를 마이그레이션에 추가합니다.
+
+[2 tools called]
+
+환경 변수 로드 시 테스트 import가 막히지 않게 분리하겠습니다.
+
+[2 tools called]
+
+복구 migration의 기존 계정 차단 정책을 더 안전하게 보강합니다.
+
+[1 tool called]
+
+차단된 이전 텔레그램 계정 재생성도 막도록 보완합니다.
+
+[2 tools called]
+
+마이그레이션과 앱 타입/문법을 검증하고 오류를 수정하겠습니다.
+
+[3 tools called]
+
+Windows PowerShell 정책 때문에 npm을 cmd 경유로 다시 실행합니다.
+
+[3 tools called]
+
+Next.js 보안 경고를 반영해 패키지 버전을 올리고 빌드합니다.
+
+[2 tools called]
+
+보안 경고와 입출금 상태 전이를 추가로 정리합니다.
+
+[3 tools called]
+
+Next.js 최신 패치로 올려 다시 빌드 확인합니다.
+
+[1 tool called]
+
+빌드 후 변경된 설정과 주요 파일 상태를 점검하겠습니다.
+
+[4 tools called]
+
+빌드 산출물/캐시를 정리하고 Python 테스트 환경을 확인합니다.
+
+[3 tools called]
+
+Python 테스트가 pytest 없이 돌도록 순수 로직 모듈로 분리합니다.
+
+[4 tools called]
+
+이제 Python 기본 unittest와 CRM 빌드를 다시 확인합니다.
+
+[4 tools called]
+
+unittest import 경로를 고쳐 테스트를 재실행하겠습니다.
+
+[4 tools called]
+
+NOWPayments IPN 서명 검증 방식을 공식 방식에 가깝게 보강합니다.
+
+[1 tool called]
+
+입금 검토 후 수동 반영 전용 RPC를 추가해 중복 IPN과 분리합니다.
+
+[6 tools called]
+
+출금 승인 상태 전이와 입금 금액 제한을 마이그레이션에 반영합니다.
+
+[3 tools called]
+
+Postgres partial unique와 `ON CONFLICT` 호환 문제를 바로잡겠습니다.
+
+[7 tools called]
+
+최종적으로 캐시 제거와 파일 목록을 확인하겠습니다.
+
+[3 tools called]
+
+기획서 기반으로 프로젝트 초기 구현을 완료했습니다.
+
+- `supabase/migrations/001_initial_schema.sql`
+  - 유저/복구키/원장/입출금/배팅/관리자/Audit 테이블 생성
+  - `place_bet`, `settle_bet`, 입금 IPN 반영, 출금 선차감/승인/거절/환급, 복구 migration, 관리자 설정/잔액/상태 변경 RPC 구현
+  - `FOR UPDATE`, idempotency key, RLS enable, 민감 RPC `REVOKE EXECUTE` 반영
+- `apps/bot/`
+  - FastAPI Telegram webhook 봇 구현
+  - `/start`, 게임 메뉴, `sendDice()` 배팅 정산, `/deposit`, `/withdraw`, `/recovery_issue`, `/recover`
+  - NOWPayments IPN HMAC 검증 및 Supabase RPC 연동
+- `apps/crm/`
+  - Next.js 16 + TypeScript + Tailwind CRM 초기 구현
+  - 로그인, 대시보드/게임/마켓/유저/입금/출금/복구/환경설정 페이지
+  - 관리자 JWT 검증 + `admin_accounts` 확인 + server-only service role API 라우트 구현
+- 배포/문서
+  - `render.yaml`, `vercel.json`, `README.md`, `docs/implementation-notes.md`, `docs/sql/pre-deploy-checks.sql`
+  - `.gitignore`, shared constants, DB notes 추가
+
+검증 완료:
+- `python -m py_compile apps/bot/main.py apps/bot/game_logic.py`
+- `python -m unittest discover -s apps/bot/tests -v`
+- `cd apps/crm && npm run build`
+
+참고:
+- 실제 배포는 아직 하지 않았습니다. `TELEGRAM_BOT_TOKEN`, Supabase 키, NOWPayments 키, Render/Vercel 권한이 필요합니다.
+- CRM 화면은 현재 운영 API를 붙인 초기 관리 콘솔 형태(JSON 기반 조회 중심)입니다. 다음 단계에서 테이블/폼 UI를 붙이면 실사용 관리자 화면으로 완성할 수 있습니다.
