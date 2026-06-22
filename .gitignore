@@ -2,6 +2,7 @@ node_modules/
 .next/
 __pycache__/
 *.pyc
+.verdent.7z
 .env
 .env.*
 !.env.example
