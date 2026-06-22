@@ -146,6 +146,7 @@ create or replace function public.bet_multiplier(p_game_type text)
 returns numeric
 language sql
 immutable
+set search_path = public
 as $$
   select case
     when p_game_type in ('odd_even', 'under_over') then 1.95
@@ -158,6 +159,7 @@ create or replace function public.is_winning_bet(p_game_type text, p_selection t
 returns boolean
 language sql
 immutable
+set search_path = public
 as $$
   select case
     when p_game_type = 'odd_even' then (p_dice_value % 2 = 1 and p_selection = 'odd') or (p_dice_value % 2 = 0 and p_selection = 'even')
@@ -589,4 +591,5 @@ end;
 $$;
 
 revoke all on all tables in schema public from anon, authenticated;
-revoke execute on all functions in schema public from anon, authenticated;
+revoke execute on all functions in schema public from public, anon, authenticated;
+grant execute on all functions in schema public to service_role;
